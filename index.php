@@ -117,7 +117,7 @@ header, section, footer, aside, article, figure {
 
 <div class="container">
   <header>
-    <a href="#"><img src="" alt="Insert Logo Here" width="180" height="90" id="Insert_logo" style="background-color: #C6D580; display:block;" /></a>
+    <a href="#"><img src="" alt="Insert Logo Here" width="180" height="90" id="Insert_logo" style="background-color: #C6D580; display:block;" />Hello</a>
   </header>
   <div class="sidebar1">
   <nav>
