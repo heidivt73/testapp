@@ -2,7 +2,7 @@
 $resp = 'not set';
 
 function getResponse() {
-	echo "woohoo";
+	echo $resp;
 }
 
 function createPreview() {
@@ -72,13 +72,13 @@ function createPreview() {
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
-        <input type="text" id="responseLabel"><?php getResponse(); ?></input>
+        <span id="responseLabel"><?php getResponse(); ?></span>
         
     </form>
     <form>
     	<input type="button" value="test http" onClick="testHTTPRequest()" />
-       <input type="text" id="httpstatus">abc</input>
-       <input type="text" id="httpresponse">def</input>       
+       <span id="httpstatus">abc</span>
+       <span id="httpresponse">def</span>       
     </form>
     <iframe id="previewPlaceholder">
     </iframe> 
