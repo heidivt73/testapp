@@ -1,5 +1,5 @@
 <?php
-$resp = 'not set';
+$resp = "not set";
 
 function getResponse() {
 	echo $resp;
