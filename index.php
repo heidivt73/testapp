@@ -4,16 +4,17 @@ function createPreview() {
 	// Get cURL resource
 	$curl = curl_init();
 	// Set some options - we are passing in a useragent too here
+	$data = array(url => 'https://cloud.box.com/shared/static/4qhegqxubg8ox0uj5ys8.pdf');
+	$data_string = json_encode($data);
+	
 	curl_setopt_array($curl, array(
 		CURLOPT_RETURNTRANSFER => 1,
 		CURLOPT_URL => 'https://view-api.box.com/1/documents',
 		CURLOPT_USERAGENT => 'Heidi Sample cURL Request',
 		CURLOPT_HTTPHEADER => array(
-			"Authorization: Token 0i5v1j4aeakehzf0kua7x31hm5rj78im", "Content-Type: application/json"),
+			"Authorization: Token 0i5v1j4aeakehzf0kua7x31hm5rj78im", "Content-Type: application/json", "Content-Length: " . strlen($data_string)),
 		CURLOPT_POST => 1,
-		CURLOPT_POSTFIELDS => array(
-			url => 'https://cloud.box.com/shared/static/4qhegqxubg8ox0uj5ys8.pdf'
-		)
+		CURLOPT_POSTFIELDS => $data_string
 	));
 	// Send the request & save response to $resp
 	$resp = curl_exec($curl);
