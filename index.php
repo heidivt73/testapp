@@ -10,7 +10,8 @@ function createPreview() {
 	curl_setopt_array($curl, array(
 		CURLOPT_RETURNTRANSFER => 1,
 		CURLOPT_URL => 'https://view-api.box.com/1/documents',
-		CURLOPT_USERAGENT => 'Heidi Sample cURL Request',
+//		CURLOPT_USERAGENT => 'Heidi Sample cURL Request',
+		CURLOPT_FOLLOWLOCATION => 1,
 		CURLOPT_HTTPHEADER => array(
 			"Authorization: Token 0i5v1j4aeakehzf0kua7x31hm5rj78im", "Content-Type: application/json", "Content-Length: " . strlen($data_string)),
 		CURLOPT_POST => 1,
