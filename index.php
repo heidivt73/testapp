@@ -88,7 +88,8 @@ $view_session_id = createPreview();
 		function loadIFrame(viewSessionID)
 		{
 			var viewFrameURL = "https://view-api.box.com/view/" + viewSessionID;
-			document.getElementById('viewFrame').contentWindow.postMessage(viewFrameURL, 'http://peaceful-river-4267.herokuapp.com/');
+//			document.getElementById('viewFrame').contentWindow.postMessage(viewFrameURL, 'http://peaceful-river-4267.herokuapp.com/');
+			document.getElementById('responseLabel').innerHTML = viewFrameURL;
 		}
     </script>
 
@@ -100,10 +101,10 @@ $view_session_id = createPreview();
       </script>
     <![endif]-->
   </head>
-  <body onLoad="loadIFrame('<?php echo $view_session_id; ?>')">
+  <body onLoad="loadIFrame(<?php echo $view_session_id; ?>)">
   
-	<iframe id="viewFrame" src="iframe_placeholder.html" seamless style="border:none; width:750px; height:440px;" >
-	</iframe> 
+<!--	<iframe id="viewFrame" src="iframe_placeholder.html" seamless style="border:none; width:750px; height:440px;" >
+	</iframe> -->
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
