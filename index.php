@@ -51,8 +51,11 @@ function createPreview() {
 		function testHTTPRequest()
 		{
 			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "http://www.codecademy.com/", false);
-			xhr.send();
+//			xhr.open("GET", "http://www.codecademy.com/", false);
+			xhr.open("POST", "https://view-api.box.com/1/documents", false);
+			xhr.setRequestHeader("Authorization", "Token 0i5v1j4aeakehzf0kua7x31hm5rj78im");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send('{"url": "https://cloud.box.com/shared/static/4qhegqxubg8ox0uj5ys8.pdf"}');
 	
 			document.getElementById('httpstatus').innerHTML = xhr.status;
 			document.getElementById('httpresponse').innerHTML = xhr.statusText;
