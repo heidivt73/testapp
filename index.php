@@ -1,4 +1,5 @@
 <?php
+$view_url = "";
 
 function createPreview() {
 	// Get cURL resource
@@ -43,7 +44,7 @@ function createPreview() {
 	curl_close($curl);
 	
 	$view_url = "https://view-api.box.com/view/" . $view_session_id;
-	return $view_session_id;
+	return $view_url;
 	
 }
 ?>
