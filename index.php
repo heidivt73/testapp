@@ -1,6 +1,7 @@
 <?php
 $resp = 'not set';
-/* public function createPreview() {
+
+function createPreview() {
 	// Get cURL resource
 	$curl = curl_init();
 	// Set some options - we are passing in a useragent too here
@@ -20,7 +21,7 @@ $resp = 'not set';
 	// Close request to clear up some resources
 	curl_close($curl);
 	
-} */
+}
 ?>
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
