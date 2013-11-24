@@ -2,7 +2,7 @@
 $resp = 'not set';
 
 function getResponse() {
-	return "woohoo";
+	echo "woohoo";
 }
 
 function createPreview() {
@@ -45,6 +45,18 @@ function createPreview() {
 		{
 			 $('#responseLabel').text = newValue;
 		}
+		
+		function testHTTPRequest()
+		{
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://www.codecademy.com/", false);
+			xhr.send();
+	
+			httpstatus.text = xhr.status;
+			httpresponse.text = xhr.statusText; 		
+//			console.log(xhr.status);
+//			console.log(xhr.statusText);
+		}
     </script>
 
     <!--[if IE]>
@@ -59,8 +71,13 @@ function createPreview() {
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
-        <input type="text" id="responseLabel"><?php echo getResponse(); ?></input>
+        <input type="text" id="responseLabel"><?php getResponse(); ?></input>
         
+    </form>
+    <form>
+    	<input type="button" value="test http" onClick="testHTTPRequest()" />
+       <input type="text" id="httpstatus"/>
+       <input type="text" id="httpresponse"/>       
     </form>
     <iframe id="previewPlaceholder">
     </iframe> 
