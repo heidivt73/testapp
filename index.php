@@ -43,12 +43,12 @@ function createPreview() {
 	// Close request to clear up some resources
 	curl_close($curl);
 	
-	$view_url = "https://view-api.box.com/view/" . $view_session_id;
-	return $view_url;
+//	$view_url = "https://view-api.box.com/view/" . $view_session_id;
+	return $view_session_id;
 	
 }
 
-$view_url = createPreview();
+$view_session_id = createPreview();
 
 ?>
 <!DOCTYPE html>
@@ -85,8 +85,9 @@ $view_url = createPreview();
 //			console.log(xhr.status);
 //			console.log(xhr.statusText);
 		}
-		function loadIFrame(viewFrameURL)
+		function loadIFrame(viewSessionID)
 		{
+			var viewFrameURL = "https://view-api.box.com/view/" + viewSessionID;
 			document.getElementById('viewFrame').contentWindow.postMessage(viewFrameURL, 'http://peaceful-river-4267.herokuapp.com/');
 		}
     </script>
@@ -99,7 +100,7 @@ $view_url = createPreview();
       </script>
     <![endif]-->
   </head>
-  <body onLoad="loadIFrame(<?php echo $view_url; ?>)">
+  <body onLoad="loadIFrame(<?php echo $view_session_id; ?>)">
   
 	<iframe id="viewFrame" src="iframe_placeholder.html" seamless style="border:none; width:750px; height:440px;" >
 	</iframe> 
