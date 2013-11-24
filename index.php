@@ -1,6 +1,10 @@
 <?php
 $resp = 'not set';
 
+function getResponse() {
+	return $resp;
+}
+
 function createPreview() {
 	// Get cURL resource
 	$curl = curl_init();
@@ -54,8 +58,8 @@ function createPreview() {
   <body>
 	<form>
         <input id="urlField" type="text"/>
-        <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>; setResponseLabel(<?php echo $resp ?>);"/>
-        <input type="text" id="responseLabel"><?php echo $resp ?></input>
+        <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
+        <input type="text" id="responseLabel"><?php echo getResponse(); ?></input>
         
     </form>
     <iframe id="previewPlaceholder">
