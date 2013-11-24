@@ -1,5 +1,4 @@
 <?php
-$view_url = "";
 
 function createPreview() {
 	// Get cURL resource
@@ -47,6 +46,9 @@ function createPreview() {
 	return $view_url;
 	
 }
+
+$view_url = createPreview();
+
 ?>
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
@@ -93,7 +95,7 @@ function createPreview() {
     <![endif]-->
   </head>
   <body>
-	<iframe src="<?php echo createPreview(); ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe> 
+	<iframe src="<?php echo $view_url; ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe> 
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
