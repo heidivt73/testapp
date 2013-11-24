@@ -21,6 +21,8 @@ function createPreview() {
 	// Close request to clear up some resources
 	curl_close($curl);
 	
+	 $('#responseLabel').text = $resp;
+	
 }
 ?>
 <!DOCTYPE html>
@@ -108,7 +110,8 @@ function createPreview() {
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
-        <label><?php echo $resp ?></label>
+        <input type="text" id="responseLabel"><?php echo $resp ?></input>
+        
     </form>
     <iframe id="previewPlaceholder">
     </iframe> 
