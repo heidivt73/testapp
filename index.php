@@ -108,8 +108,8 @@ $view_session_id = createPreview();
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
-        <a href="#" onClick="window.open(document.getElementById('responseLabel').innerHTML)">
-        <span id="responseLabel"><!--<?php echo createPreview(); ?>--></span></a>
+        <a href="#" onClick="window.open(document.getElementById('responseLabel').innerHTML, '_self')">
+        <span id="responseLabel">abc</span></a>
     </form>
 <!--    <form>
     	<input type="button" value="test http" onClick="testHTTPRequest()" />
