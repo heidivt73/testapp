@@ -93,6 +93,7 @@ function createPreview() {
     <![endif]-->
   </head>
   <body>
+	<iframe src="<?php echo createPreview(); ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe>
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
@@ -104,6 +105,5 @@ function createPreview() {
        <span id="httpstatus">abc</span>
        <span id="httpresponse">def</span>       
     </form>
-	<iframe src="<?php echo createPreview(); ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe>
   </body>
 </html>
