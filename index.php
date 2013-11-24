@@ -107,8 +107,8 @@ function createPreview() {
   <body>
 	<form>
         <input id="urlField" type="text"/>
-        <input type="button" value="Create Preview" onClick="alert('foo');"/>
-        <label></label>
+        <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
+        <label><?php echo $resp ?></label>
     </form>
     <iframe id="previewPlaceholder">
     </iframe> 
