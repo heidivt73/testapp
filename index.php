@@ -77,8 +77,8 @@ function createPreview() {
     </form>
     <form>
     	<input type="button" value="test http" onClick="testHTTPRequest()" />
-       <input type="text" id="httpstatus"/>
-       <input type="text" id="httpresponse"/>       
+       <input type="text" id="httpstatus">abc</input>
+       <input type="text" id="httpresponse">def</input>       
     </form>
     <iframe id="previewPlaceholder">
     </iframe> 
