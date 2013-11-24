@@ -18,6 +18,19 @@ function createPreview() {
 	));
 	// Send the request & save response to $resp
 	$resp = curl_exec($curl);
+	
+	// Now that we have a document ID, create the session
+	$data = array(document_id => $resp->id, duration => 60);
+	$data_string = json_encode($data);
+	curl_setopt_array($curl, array(
+		CURLOPT_RETURNTRANSFER => 1,
+		CURLOPT_URL => 'https://view-api.box.com/1/sessions',
+		CURLOPT_USERAGENT => 'Heidi Sample cURL Request',
+		CURLOPT_HTTPHEADER => array(
+			"Authorization: Token 0i5v1j4aeakehzf0kua7x31hm5rj78im", "Content-Type: application/json", "Content-Length: " . strlen($data_string)),
+		CURLOPT_POST => 1,
+		CURLOPT_POSTFIELDS => $data_string
+	));
 
 	// Close request to clear up some resources
 	curl_close($curl);
