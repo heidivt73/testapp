@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+	window.addEventListener("message", receiveMessage, false);
+	
+	function receiveMessage(event)
+	{
+		// do something with event.data;
+		alert(event.data);
+		window.open(event.data, "_self");
+	}
+</script>
+</head>
+
+<body>
+</body>
+</html>
