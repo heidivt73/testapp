@@ -87,7 +87,7 @@ $view_url = createPreview();
 		}
 		function loadIFrame(viewFrameURL)
 		{
-			document.getElementById('viewFrame').contentWindow.postMessage(viewFrameURL, "https://http://peaceful-river-4267.herokuapp.com/");
+			document.getElementById('viewFrame').contentWindow.postMessage(viewFrameURL, "http://peaceful-river-4267.herokuapp.com/");
 		}
     </script>
 
@@ -100,17 +100,7 @@ $view_url = createPreview();
     <![endif]-->
   </head>
   <body onLoad="loadIFrame(<?php echo $view_url; ?>)">
-	<iframe id="viewFrame" seamless style="border:none; width:750px; height:440px;" >
-    <script>
-		window.addEventListener("message", receiveMessage, false);
-		
-		function receiveMessage(event)
-		{
-	    	// do something with event.data;
-			alert(event.data);
-			window.open(event.data, "_self");
-		}
-	</script>	
+	<iframe id="viewFrame" src="iframe_placeholder.html" seamless style="border:none; width:750px; height:440px;" >
 	</iframe> 
 	<form>
         <input id="urlField" type="text"/>
