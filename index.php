@@ -72,7 +72,7 @@ function createPreview() {
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
-        <span id="responseLabel"><?php getResponse(); ?></span>
+        <span id="responseLabel"><?php echo $resp; ?></span>
         
     </form>
     <form>
