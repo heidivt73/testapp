@@ -20,7 +20,8 @@ function createPreview() {
 	$resp = curl_exec($curl);
 	
 	// Now that we have a document ID, create the session
-	$data = array(document_id => $resp->id, duration => 60);
+	$resp_obj = json_decode($resp);
+	$data = array(document_id => $resp_obj->{'id'}, duration => 60);
 	$data_string = json_encode($data);
 	curl_setopt_array($curl, array(
 		CURLOPT_RETURNTRANSFER => 1,
