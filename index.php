@@ -2,7 +2,7 @@
 $resp = 'not set';
 
 function getResponse() {
-	return $resp;
+	return "woohoo";
 }
 
 function createPreview() {
