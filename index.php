@@ -85,6 +85,10 @@ $view_url = createPreview();
 //			console.log(xhr.status);
 //			console.log(xhr.statusText);
 		}
+		function loadIFrame(viewFrameURL)
+		{
+			document.getElementById('viewFrame').contentWindow.postMessage(viewFrameURL, "https://http://peaceful-river-4267.herokuapp.com/");
+		}
     </script>
 
     <!--[if IE]>
@@ -95,8 +99,19 @@ $view_url = createPreview();
       </script>
     <![endif]-->
   </head>
-  <body>
-	<iframe src="<?php echo $view_url; ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe> 
+  <body onLoad="loadIFrame(<?php echo $view_url; ?>)">
+	<iframe id="viewFrame" seamless style="border:none; width:750px; height:440px;" >
+    <script>
+		window.addEventListener("message", receiveMessage, false);
+		
+		function receiveMessage(event)
+		{
+	    	// do something with event.data;
+			alert(event.data);
+			window.open(event.data, "_self");
+		}
+	</script>	
+	</iframe> 
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
