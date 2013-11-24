@@ -1,7 +1,6 @@
 <?php
-$resp = "not set";
-public function createPreview()
-{
+$resp = 'not set';
+public function createPreview() {
 	// Get cURL resource
 	$curl = curl_init();
 	// Set some options - we are passing in a useragent too here
@@ -107,8 +106,8 @@ public function createPreview()
   <body>
 	<form>
         <input id="urlField" type="text"/>
-        <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
-        <label><?php echo $resp ?></label>
+        <input type="button" value="Create Preview" onClick="alert('foo');"/>
+        <label></label>
     </form>
     <iframe id="previewPlaceholder">
     </iframe> 
