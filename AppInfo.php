@@ -2,9 +2,9 @@
 
 /**
  * This class provides static methods that return pieces of data specific to
- * your app
+ * your app 
  */
-class AppInfo {
+class AppInfo { 
 
   /*****************************************************************************
    *

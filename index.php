@@ -9,7 +9,7 @@
  */
 
 // Provides access to app specific values such as your app id and app secret.
-// Defined in 'AppInfo.php'
+// Defined in 'AppInfo.php'  
 require_once('AppInfo.php');
 
 // Enforce https on production
