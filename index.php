@@ -52,8 +52,9 @@ function createPreview() {
 			xhr.open("GET", "http://www.codecademy.com/", false);
 			xhr.send();
 	
-			httpstatus.text = xhr.status;
-			httpresponse.text = xhr.statusText; 		
+			document.getElementById('httpstatus').innerHTML = xhr.status;
+			document.getElementById('httpresponse').innerHTML = xhr.statusText;
+
 //			console.log(xhr.status);
 //			console.log(xhr.statusText);
 		}
