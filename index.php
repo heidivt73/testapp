@@ -31,6 +31,8 @@ function createPreview() {
 		CURLOPT_POST => 1,
 		CURLOPT_POSTFIELDS => $data_string
 	));
+	
+	$resp = curl_exec($curl);
 
 	// Close request to clear up some resources
 	curl_close($curl);
