@@ -18,8 +18,6 @@ function createPreview() {
 	// Send the request & save response to $resp
 	$resp = curl_exec($curl);
 
-	echo $resp;
-
 	// Close request to clear up some resources
 	curl_close($curl);
 	
@@ -75,8 +73,8 @@ function createPreview() {
   <body>
 	<form>
         <input id="urlField" type="text"/>
-        <input type="button" value="Create Preview" onClick="setResponseLabel(<?php createPreview(); ?>)"/>
-        <span id="responseLabel">aaa</span>
+        <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
+        <span id="responseLabel"><?php echo createPreview(); ?></span>
         
     </form>
     <form>
