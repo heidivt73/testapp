@@ -93,17 +93,17 @@ function createPreview() {
     <![endif]-->
   </head>
   <body>
-<!--	<iframe src="<?php echo createPreview(); ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe> -->
+	<iframe src="<?php echo createPreview(); ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe> 
 	<form>
         <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
-        <span id="responseLabel"><?php echo createPreview(); ?></span>
-        <a href="#" onClick="window.open(document.getElementById('responseLabel').innerHTML)" />
+        <a href="#" onClick="window.open(document.getElementById('responseLabel').innerHTML)">
+        <span id="responseLabel"><!--<?php echo createPreview(); ?>--></span></a>
     </form>
-    <form>
+<!--    <form>
     	<input type="button" value="test http" onClick="testHTTPRequest()" />
        <span id="httpstatus">abc</span>
        <span id="httpresponse">def</span>       
-    </form>
+    </form> -->
   </body>
 </html>
