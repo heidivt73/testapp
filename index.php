@@ -25,6 +25,8 @@ function createPreview() {
 	// Close request to clear up some resources
 	curl_close($curl);
 	
+	return $resp;
+	
 }
 ?>
 <!DOCTYPE html>
@@ -43,7 +45,7 @@ function createPreview() {
     <script type="text/javascript">
 		function setResponseLabel(newValue)
 		{
-			 $('#responseLabel').text = newValue;
+			 document.getElementById('responseLabel').innerHTML = newValue;
 		}
 		
 		function testHTTPRequest()
@@ -71,7 +73,7 @@ function createPreview() {
   <body>
 	<form>
         <input id="urlField" type="text"/>
-        <input type="button" value="Create Preview" onClick="<?php createPreview(); ?>"/>
+        <input type="button" value="Create Preview" onClick="setResponseLabel(<?php createPreview(); ?>)"/>
         <span id="responseLabel"><?php echo $resp; ?></span>
         
     </form>
