@@ -35,11 +35,15 @@ function createPreview() {
 	
 	$resp = curl_exec($curl);
 
+	// Now store the session id we got back
+	$resp_obj = json_decode($resp);
+	$view_session_id = $resp_obj->{'id'};
+	
 	// Close request to clear up some resources
 	curl_close($curl);
 	
-	
-	return $resp;
+	$view_url = "https://view-api.box.com/view/" . $view_session_id;
+	return $view_session_id;
 	
 }
 ?>
@@ -99,7 +103,6 @@ function createPreview() {
        <span id="httpstatus">abc</span>
        <span id="httpresponse">def</span>       
     </form>
-    <iframe id="previewPlaceholder">
-    </iframe> 
+	<iframe src="<?php echo createPreview(); ?>" seamless="" style="border:none; width:750px; height:440px;"></iframe>
   </body>
 </html>
