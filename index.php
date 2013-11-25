@@ -41,8 +41,8 @@
 			xhr.open("GET", "callview.php?fileURL=" + fileURL, false);
 			xhr.send();
 			
-			alert(xhr.responseBody);
-			return xhr.responseBody;
+			alert(xhr.responseText);
+			return xhr.responseText;
 		}
 		function loadIFrame(viewSessionID)
 		{
