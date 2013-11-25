@@ -92,7 +92,13 @@ $view_session_id = createPreview();
 			document.getElementById('responseLabel').innerHTML = viewFrameURL;
 		}
     </script>
-
+	<script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+    <script>
+		function fileChosen(event)
+		{
+			alert(event.fpfile);
+		}
+	</script>
     <!--[if IE]>
       <script type="text/javascript">
         var tags = ['header', 'section'];
@@ -106,8 +112,9 @@ $view_session_id = createPreview();
 <!--	<iframe id="viewFrame" src="iframe_placeholder.html" seamless style="border:none; width:750px; height:440px;" >
 	</iframe> -->
 	<form>
-        <input id="urlField" type="text"/>
-        <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/>
+<!--        <input id="urlField" type="text"/>
+        <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/> -->
+		<input type="filepicker" id="inkFilePicker" data-fp-apikey="ARdCI6vhZTriwXOwUTy9Kz" onChange="fileChosen(event, '<?php echo $view_session_id; ?>')"/>
         <a href="#" onClick="window.open(document.getElementById('responseLabel').innerHTML, '_self')">
         <span id="responseLabel">abc</span></a>
     </form>
