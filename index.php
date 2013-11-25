@@ -1,10 +1,10 @@
 <?php
 
-function createPreview() {
+function createPreview($fileURL) {
 	// Get cURL resource
 	$curl = curl_init();
 	// Set some options - we are passing in a useragent too here
-	$data = array(url => 'https://cloud.box.com/shared/static/4qhegqxubg8ox0uj5ys8.pdf');
+	$data = array(url => $fileURL); //'https://cloud.box.com/shared/static/4qhegqxubg8ox0uj5ys8.pdf');
 	$data_string = json_encode($data);
 	
 	curl_setopt_array($curl, array(
@@ -48,7 +48,7 @@ function createPreview() {
 	
 }
 
-$view_session_id = createPreview();
+$view_session_id = createPreview('https://cloud.box.com/shared/static/4qhegqxubg8ox0uj5ys8.pdf');
 
 ?>
 <!DOCTYPE html>
@@ -96,8 +96,8 @@ $view_session_id = createPreview();
     <script>
 		function fileChosen(event)
 		{
-			alert(event.fpfile.url);
-			alert(event.fpfile.data.filename);
+	//		alert(event.fpfile.url);
+			
 		}
 	</script>
     <!--[if IE]>
