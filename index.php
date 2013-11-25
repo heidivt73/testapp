@@ -96,7 +96,8 @@ $view_session_id = createPreview();
     <script>
 		function fileChosen(event)
 		{
-			alert(event.fpfile);
+			alert(event.fpfile.url);
+			alert(event.fpfile.data.filename);
 		}
 	</script>
     <!--[if IE]>
