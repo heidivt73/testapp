@@ -55,7 +55,7 @@
     <script>
 		function fileChosen(event)
 		{
-	//		alert(event.fpfile.url);
+			alert(event.fpfile.url);
 			viewSessionID = callViewAPI(event.fpfile.url);
 			loadIFrame(viewSessionID);
 		}
