@@ -72,6 +72,7 @@
   <body>
 <!--	<iframe id="viewFrame" src="iframe_placeholder.html" seamless style="border:none; width:750px; height:440px;" >
 	</iframe> -->
+    <p>Heidi's changes</p>
 	<form>
 <!--        <input id="urlField" type="text"/>
         <input type="button" value="Create Preview" onClick="setResponseLabel('heidi')"/> -->
